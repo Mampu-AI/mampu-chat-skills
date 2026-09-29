@@ -1,0 +1,16 @@
+{
+  "name": "mampu-chat",
+  "owner": {
+    "name": "Mampu AI"
+  },
+  "plugins": [
+    {
+      "name": "mampu-chat",
+      "source": "./plugins/mampu-chat",
+      "description": "Build and edit Sapot flow agents with Claude (Mampu AI team)"
+    }
+  ],
+  "metadata": {
+    "description": "Mampu Chat — Claude Code plugin for the Mampu AI team"
+  }
+}

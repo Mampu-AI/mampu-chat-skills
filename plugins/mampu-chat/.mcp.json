@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "sapot-flows": {
+      "type": "http",
+      "url": "${SAPOT_FLOWS_MCP_URL:-https://mcp.sapot.ai/internal/mcp}",
+      "headers": {
+        "Authorization": "Bearer ${SAPOT_STAFF_TOKEN:-}"
+      },
+      "headersHelper": "${CLAUDE_PLUGIN_ROOT}/scripts/sapot-headers.sh"
+    }
+  }
+}
