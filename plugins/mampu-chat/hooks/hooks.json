@@ -1,9 +1,9 @@
 {
-  "description": "Always asks the human to confirm the target account and flow before a flow is saved.",
+  "description": "Always asks the human to confirm the target account and flow before a flow is saved or patched.",
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "mcp__.*sapot-flows__save_flow",
+        "matcher": "mcp__.*sapot-flows__(save_flow|patch_flow)",
         "hooks": [
           {
             "type": "command",
