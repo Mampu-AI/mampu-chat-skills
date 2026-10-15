@@ -7,7 +7,7 @@
     {
       "name": "mampu-chat",
       "source": "./plugins/mampu-chat",
-      "description": "Build and edit Sapot flow agents with Claude (Mampu AI team)"
+      "description": "Build Sapot flow agents and work on client accounts with Claude (Mampu AI team)"
     }
   ],
   "metadata": {

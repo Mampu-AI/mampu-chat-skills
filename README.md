@@ -1,6 +1,7 @@
 # Mampu Chat — Claude Code plugin
 
-A Claude Code plugin for the Mampu AI team to build and edit Sapot flow agents with Claude.
+A Claude Code plugin for the Mampu AI team to build and edit Sapot flow agents, and to work on
+client accounts (conversations, reports, knowledge, templates, campaigns, Playground tests) with Claude.
 
 It only works with an **authorised Mampu account**: every action is checked by the Sapot server,
 and without an authorised access token the tools do nothing.
@@ -10,6 +11,12 @@ and without an authorised access token the tools do nothing.
 You describe the flow in plain words; Claude confirms which account and flow you mean, builds
 it, checks it on the server, and uploads it as a **draft** after you approve the save. You then
 test the draft and publish it yourself in the Flow Designer. Claude never publishes.
+
+You can also ask about or work on a client account: "why did conversation 12345 hand off?",
+"handoffs per day this week for Propvestor", "draft replies to yesterday's unanswered chats",
+"check what the AI would answer about delivery fees". Claude works only on accounts you are a
+member of, with what your role there allows, and asks you before anything a customer would see
+(a reply, a live knowledge entry, a template, a campaign draft, a delete).
 
 ## Install
 
@@ -37,9 +44,10 @@ file).
 
 ## What's in this plugin
 
-- `skills/flow-builder` — a short skill; the working instructions come from the server.
-- `.mcp.json` — the connection to the Sapot flow tools.
-- `hooks/` — asks you to approve every upload.
+- `skills/flow-builder` — builds and edits flows; the working instructions come from the server.
+- `skills/sapot` — everyday account work and reports; its instructions come from the server too.
+- `.mcp.json` — the connection to the Sapot tools.
+- `hooks/` — asks you to approve every flow upload and every change a customer would see.
 - `scripts/` — reads and stores your token in the OS keychain.
 
 ## Maintainers

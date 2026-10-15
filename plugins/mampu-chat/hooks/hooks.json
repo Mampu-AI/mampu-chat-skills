@@ -1,5 +1,5 @@
 {
-  "description": "Always asks the human to confirm the target account and flow before a flow is saved or patched.",
+  "description": "Always asks the human to confirm before a flow is saved or patched, and before any change a client's customers would see.",
   "hooks": {
     "PreToolUse": [
       {
@@ -8,6 +8,16 @@
           {
             "type": "command",
             "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/confirm_save.sh\"",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "mcp__.*sapot-flows__(reply_to_conversation|create_knowledge_entry|update_knowledge_entry|approve_knowledge_entry|delete_knowledge_entry|update_knowledge_profile|set_flow_agent_inboxes|attach_flow_capability|create_whatsapp_template|update_whatsapp_template|delete_whatsapp_template|create_calendar_tool|update_calendar_tool|draft_campaign|update_campaign_draft)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "sh \"${CLAUDE_PLUGIN_ROOT}/hooks/confirm_customer_change.sh\"",
             "timeout": 10
           }
         ]
